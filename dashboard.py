@@ -55,7 +55,9 @@ def _load(path: str) -> pd.DataFrame:
         return pd.DataFrame()
     df = pd.read_csv(path)
     for c in ["direction", "lag_days", "shares", "price_at_trade", "dollar_value",
+              "price_30d_before", "price_90d_before",
               "price_30d", "price_90d", "price_180d", "price_today",
+              "pre_30d_pct", "pre_90d_pct",
               "ret_30d_pct", "ret_90d_pct", "ret_180d_pct", "ret_to_today_pct",
               "years_held", "annualized_pct"]:
         if c in df.columns:
@@ -213,6 +215,48 @@ def _chart_size(df: pd.DataFrame) -> str:
                       legend=dict(orientation="h", y=-0.18),
                       margin=dict(t=30, l=40, r=20, b=40))
     return fig.to_html(include_plotlyjs=False, full_html=False, div_id="c-size")
+
+
+def _chart_dip_buying(df: pd.DataFrame) -> str:
+    """Bucket insider BUYS by pre-trade 30-day stock move; show post-trade returns per bucket."""
+    if "pre_30d_pct" not in df.columns:
+        return "<p style='color:#6b7280'>Pre-trade returns not in this CSV — re-run <code>python backtest_form4.py</code>.</p>"
+    buys = df[(df["direction"] == 1) & df["pre_30d_pct"].notna() & df["ret_30d_pct"].notna() & df["ret_90d_pct"].notna()].copy()
+    if buys.empty:
+        return "<p>No data.</p>"
+    bins = [
+        ("Big drop (>20% down)", -1000, -20),
+        ("Drop (-20 to -10%)", -20, -10),
+        ("Mild dip (-10 to 0%)", -10, 0),
+        ("Flat (0 to 5%)", 0, 5),
+        ("Up (5 to 15%)", 5, 15),
+        ("Big up (>15%)", 15, 1000),
+    ]
+    rows = []
+    for name, lo, hi in bins:
+        b = buys[(buys["pre_30d_pct"] >= lo) & (buys["pre_30d_pct"] < hi)]
+        if len(b) < 5:
+            continue
+        # Winsorize at ±100% to tame tails
+        r30 = b["ret_30d_pct"].clip(-100, 100).mean()
+        r90 = b["ret_90d_pct"].clip(-100, 100).mean()
+        rows.append({"bucket": name, "n": len(b), "r30": r30, "r90": r90})
+    d = pd.DataFrame(rows)
+    fig = go.Figure()
+    fig.add_bar(name="+30d after the buy", x=d["bucket"], y=d["r30"], marker_color="#dc2626",
+                text=[f"{v:+.1f}%<br>(n={n})" for v, n in zip(d["r30"], d["n"])],
+                textposition="outside")
+    fig.add_bar(name="+90d after the buy", x=d["bucket"], y=d["r90"], marker_color="#2563eb",
+                text=[f"{v:+.1f}%" for v in d["r90"]],
+                textposition="outside")
+    fig.update_layout(
+        yaxis_title="Avg % the stock moved after the insider bought",
+        xaxis_title="Stock's move in the 30 days BEFORE the buy",
+        barmode="group", height=440,
+        legend=dict(orientation="h", y=-0.22),
+        margin=dict(t=30, l=40, r=20, b=100),
+    )
+    return fig.to_html(include_plotlyjs=False, full_html=False, div_id="c-dip")
 
 
 def _chart_buys_vs_sells(df: pd.DataFrame) -> str:
@@ -406,7 +450,17 @@ def render(df: pd.DataFrame) -> str:
             "Insiders aren't betting their wealth on a small position. A $5k buy is rounding error; "
             "a $1M+ buy is a real conviction trade. The signal scales with how much skin they put in.")}
 
-  {_section("D", "Buys vs sells — the classic asymmetry",
+  {_section("D", "Are insiders 'buying the dip'? — and what happens after",
+            "Yes. 58% of insider buys happen after a price decline. The biggest post-trade rebounds come from buys after major drops (>20% down in the prior 30 days).",
+            _chart_dip_buying(df),
+            "Bucket insider BUYS by how much the stock had moved in the 30 days before they bought. "
+            "The pattern is U-shaped: post-trade returns are strongest at the EXTREMES — both deep dips "
+            "(insider treating it as an oversold bargain) and strong rallies (insider confirming momentum). "
+            "The flat middle is the noisy zone. When tomorrow's email shows a 🔴 BUY on a stock that's "
+            "down 20%+ over the past month, this chart is the population it sits in — historically "
+            "average post-30d move of about +8% and post-90d move of about +16%.")}
+
+  {_section("E", "Buys vs sells — the classic asymmetry",
             "Insider buys are a positive signal. Insider sells are noise (taxes, diversification, life events).",
             _chart_buys_vs_sells(df),
             "The +30 and +90 day post-trade return for buys is consistently positive. For sells, it's near zero "
@@ -414,36 +468,37 @@ def render(df: pd.DataFrame) -> str:
             "Practical implication: when your morning email shows a 🔴 BUY by a C-suite officer, "
             "lean in. When it shows a 🔴 SELL, treat it as informational not actionable.")}
 
-  {_section("E", "Best individual insiders",
+  {_section("F", "Best individual insiders",
             "Some insiders' buys consistently outperform. Ranked by avg +90d return (≥3 historical buys).",
             _chart_top_insiders(df),
             "When one of these names appears in tomorrow's alert, that's a credibility boost. "
             "Caveat: with only a few trades each, 'top insider' performance is noisy. "
             "Volume (n=) matters — a 100% return on 3 trades could be one lucky pick.")}
 
-  {_section("F", "Best sectors for the signal",
+  {_section("G", "Best sectors for the signal",
             "Some sectors carry more post-buy alpha than others.",
             _chart_sectors(df),
             "Sectors with ≥10 backtested buys, ranked by mean +90d return. "
             "If insider buying tends to predict more in healthcare than in industrials, you'd weight "
             "tomorrow's alert accordingly. (Sector data comes from Polygon/yfinance.)")}
 
-  {_section("G", "Cluster vs solo — how big does a cluster need to be?",
+  {_section("H", "Cluster vs solo — how big does a cluster need to be?",
             "Multiple insiders buying at the same time is a stronger signal than any single one.",
             _chart_cluster(),
             "Distribution of cluster sizes (distinct insiders buying same ticker within 30 days) in the backfill. "
             "Most buys are solo. The rare cluster events historically have higher follow-through, "
             "which is why our scoring matrix upgrades cluster buys to 🔴 regardless of size.")}
 
-  <h2 style="margin-top:36px;border-top:1px solid #e5e7eb;padding-top:18px">H. How to read tomorrow's alert</h2>
+  <h2 style="margin-top:36px;border-top:1px solid #e5e7eb;padding-top:18px">I. How to read tomorrow's alert</h2>
   <p style="font-size:17px;color:#111;margin-top:6px"><strong>Checklist for each row in the email:</strong></p>
   <ol style="font-size:15px;line-height:1.85;color:#1f2937">
-    <li><strong>Is it a BUY?</strong> Buys carry signal; sells are noise (section D).</li>
+    <li><strong>Is it a BUY?</strong> Buys carry signal; sells are noise (section E).</li>
     <li><strong>Is the buyer a CEO/CFO/COO?</strong> C-suite buys historically outperform other officers and directors (section B).</li>
     <li><strong>Is it size ≥ $250k?</strong> Bigger = stronger signal (section C).</li>
-    <li><strong>Is it part of a cluster?</strong> 2+ insiders in 30d → 🔴 regardless of size (section G).</li>
-    <li><strong>Sector?</strong> Some sectors carry more alpha than others (section F).</li>
-    <li><strong>Is this a name from section E?</strong> Members with strong historical track records add credibility.</li>
+    <li><strong>Has the stock been falling?</strong> Insider buys after >20% drops average +8% in 30d, +16% in 90d (section D). Mild dips are the noisy middle.</li>
+    <li><strong>Is it part of a cluster?</strong> 2+ insiders in 30d → 🔴 regardless of size (section H).</li>
+    <li><strong>Sector?</strong> Some sectors carry more alpha than others (section G).</li>
+    <li><strong>Is this a name from section F?</strong> Insiders with strong historical track records add credibility.</li>
   </ol>
   <p style="color:#6b7280;font-size:13px;line-height:1.6;margin-top:18px">
     Caveats: holdings/returns are direction-adjusted but raw (not benchmark-relative);

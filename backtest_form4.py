@@ -68,7 +68,9 @@ def run(limit: Optional[int], out_path: str) -> None:
         "accession", "ticker", "insider_name", "role_bucket", "officer_title",
         "transaction_date", "filing_date", "lag_days",
         "side", "direction", "shares", "price_at_trade", "dollar_value",
+        "price_30d_before", "price_90d_before",
         "price_30d", "price_90d", "price_180d", "price_today",
+        "pre_30d_pct", "pre_90d_pct",
         "ret_30d_pct", "ret_90d_pct", "ret_180d_pct", "ret_to_today_pct",
         "years_held", "annualized_pct",
     ]
@@ -86,6 +88,8 @@ def run(limit: Optional[int], out_path: str) -> None:
             # field from Finnhub with adjusted future prices produced spurious
             # "returns" measured in millions of percent on split stocks.
             p_trade = price_on_or_after(tk, tx)
+            p_30b = price_on_or_after(tk, tx - timedelta(days=30))
+            p_90b = price_on_or_after(tk, tx - timedelta(days=90))
             p_30 = price_on_or_after(tk, tx + timedelta(days=30))
             p_90 = price_on_or_after(tk, tx + timedelta(days=90))
             p_180 = price_on_or_after(tk, tx + timedelta(days=180))
@@ -102,6 +106,14 @@ def run(limit: Optional[int], out_path: str) -> None:
             ret_90 = pct(p_trade, p_90)
             ret_180 = pct(p_trade, p_180)
             ret_today = pct(p_trade, p_today)
+
+            # Pre-trade returns (NOT direction-adjusted — we want the raw stock move)
+            def raw_pct(a, b):
+                if a is None or b is None or a == 0:
+                    return None
+                return round((b - a) / a * 100, 3)
+            pre_30 = raw_pct(p_30b, p_trade)
+            pre_90 = raw_pct(p_90b, p_trade)
 
             years = (today - tx).days / 365.25
             ann = None
@@ -132,10 +144,14 @@ def run(limit: Optional[int], out_path: str) -> None:
                 "shares": r.get("shares"),
                 "price_at_trade": p_trade,
                 "dollar_value": r.get("dollar_value"),
+                "price_30d_before": p_30b,
+                "price_90d_before": p_90b,
                 "price_30d": p_30,
                 "price_90d": p_90,
                 "price_180d": p_180,
                 "price_today": p_today,
+                "pre_30d_pct": pre_30,
+                "pre_90d_pct": pre_90,
                 "ret_30d_pct": ret_30,
                 "ret_90d_pct": ret_90,
                 "ret_180d_pct": ret_180,
