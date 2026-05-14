@@ -1,0 +1,14 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/preview.html
+data/backtest*.csv
+data/dashboard.html
+data/*.zip
+.DS_Store
+
+# State files we DO commit (so each cron run inherits prior state):
+#   data/seen.sqlite                       — which Form 4 filings we've emailed
+#   data/cache/ticker_meta.json            — ticker → (sector, market_cap) cache
+#   data/cache/form4_*.json                — per-year filing caches (backfill)
