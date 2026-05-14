@@ -146,7 +146,7 @@ def main() -> int:
     p.add_argument("--max-per-day", type=int, default=None,
                    help="Cap how many filings per day are fetched (for testing)")
     args = p.parse_args()
-    min_cap = args.min_market_cap if args.min_market_cap is not None else float(os.environ.get("MIN_MARKET_CAP", "100000000"))
+    min_cap = args.min_market_cap if args.min_market_cap is not None else float(os.environ.get("MIN_MARKET_CAP", "500000000"))
     return run(args.lookback_days, args.dry_run, args.preview_recent, min_cap, args.max_per_day)
 
 

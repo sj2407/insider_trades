@@ -17,7 +17,7 @@ Same architecture, different data source (SEC EDGAR Form 4), different signal.
   - 🟠 **Some** — open-market BUY by director/officer, mid-size, or large C-suite sell
   - 🟡 **Weak** — small buys or routine C-suite sells
   - ⚪ **None** — sells by directors / 10% owners, very small buys
-- Drops trades on companies below $100M market cap
+- Drops trades on companies below $500M market cap (configurable via `MIN_MARKET_CAP`)
 - Emails new transactions only (SQLite seen-store for idempotence)
 - Includes prices at trade date, current price, % move since trade, cluster status
 
