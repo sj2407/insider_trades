@@ -48,7 +48,7 @@ def run(limit: Optional[int], out_path: str) -> None:
         tx = _parse_iso(r.get("transaction_date"))
         if not tx or tx > cutoff:
             continue
-        if not r.get("ticker") or not r.get("price"):
+        if not r.get("ticker"):
             continue
         r["_tx"] = tx
         r["_d"] = 1 if is_buy else -1
@@ -81,7 +81,11 @@ def run(limit: Optional[int], out_path: str) -> None:
             tx = r["_tx"]
             d = r["_d"]
             tk = r["ticker"]
-            p_trade = r["price"]
+            # Use yfinance's split-adjusted close as p_trade so it's consistent
+            # with the +30/+90/+180 prices (also yfinance). Mixing the raw price
+            # field from Finnhub with adjusted future prices produced spurious
+            # "returns" measured in millions of percent on split stocks.
+            p_trade = price_on_or_after(tk, tx)
             p_30 = price_on_or_after(tk, tx + timedelta(days=30))
             p_90 = price_on_or_after(tk, tx + timedelta(days=90))
             p_180 = price_on_or_after(tk, tx + timedelta(days=180))
