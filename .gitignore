@@ -6,9 +6,15 @@ data/preview.html
 data/backtest*.csv
 data/dashboard.html
 data/*.zip
+data/*.pkl
+data/last_dry_run_trades.pkl
+# Local-only caches — too big to commit, regenerated on demand from SEC / yfinance
+data/cache/filings/
+data/cache/history/
 .DS_Store
 
 # State files we DO commit (so each cron run inherits prior state):
-#   data/seen.sqlite                       — which Form 4 filings we've emailed
+#   data/seen.sqlite                       — dedupe store (which UIDs we've emailed)
+#   data/trades_history.csv                — clean, deduped, fully-filtered signal archive
 #   data/cache/ticker_meta.json            — ticker → (sector, market_cap) cache
 #   data/cache/form4_*.json                — per-year filing caches (backfill)

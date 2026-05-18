@@ -109,15 +109,41 @@ def fetch_filings_for_day(d: date) -> List[dict]:
 
 
 _XML_TAG_RE = re.compile(rb"<XML>\s*(.*?)\s*</XML>", re.DOTALL | re.IGNORECASE)
+_FILINGS_CACHE_DIR = os.path.join(os.path.dirname(__file__), "..", "data", "cache", "filings")
+
+
+def _filing_cache_path(filename: str) -> str:
+    """data/cache/filings/{accession}.txt — flat, one file per accession."""
+    base = filename.rsplit("/", 1)[-1]
+    return os.path.join(_FILINGS_CACHE_DIR, base)
 
 
 def _find_form4_xml(filename: str) -> Optional[bytes]:
-    """Fetch the .txt SGML submission and extract the inline Form 4 XML."""
-    r = _get(_FILE_BASE + filename)
-    if r is None:
-        return None
-    body = r.content
-    # The .txt envelope contains the XML between <XML>...</XML> markers
+    """Fetch the .txt SGML submission and extract the inline Form 4 XML.
+    Disk cache: once we've pulled a filing from SEC, never re-fetch it.
+    """
+    cache_path = _filing_cache_path(filename)
+    if os.path.exists(cache_path):
+        try:
+            with open(cache_path, "rb") as f:
+                body = f.read()
+        except Exception:
+            body = None
+    else:
+        body = None
+
+    if body is None:
+        r = _get(_FILE_BASE + filename)
+        if r is None:
+            return None
+        body = r.content
+        try:
+            os.makedirs(_FILINGS_CACHE_DIR, exist_ok=True)
+            with open(cache_path, "wb") as f:
+                f.write(body)
+        except Exception:
+            pass
+
     m = _XML_TAG_RE.search(body)
     if not m:
         return None

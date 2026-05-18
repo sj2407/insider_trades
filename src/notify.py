@@ -83,9 +83,112 @@ def _row(t: Form4Trade) -> str:
     """
 
 
+def _build_recap_rows(trades: List[Form4Trade]) -> str:
+    """Aggregate trades by (trade_date, ticker, direction) and produce
+    a compact recap table. Same insider buying same company across multiple
+    lots on one day → one row."""
+    groups: dict[tuple, dict] = {}
+    for t in trades:
+        if not (t.is_open_market_buy or t.is_open_market_sell):
+            continue
+        side = "BUY" if t.is_open_market_buy else "SELL"
+        key = (t.transaction_date, t.issuer_ticker, side)
+        g = groups.setdefault(key, {
+            "ticker": t.issuer_ticker,
+            "issuer": t.issuer_name,
+            "side": side,
+            "trade_date": t.transaction_date,
+            "shares_total": 0.0,
+            "value_total": 0.0,
+            "shares_x_price": 0.0,         # for weighted-avg price (weight = shares)
+            "value_x_return": 0.0,         # for weighted-avg return (weight = dollar_value)
+            "value_with_return": 0.0,      # only count value when we have a return
+            "insiders": set(),
+            "price_now": None,
+            "price_now_date": None,
+            "highest_severity": "none",
+        })
+        sh = t.shares or 0.0
+        px = t.price or 0.0
+        dv = t.dollar_value or 0.0
+        g["shares_total"] += sh
+        g["value_total"] += dv
+        g["shares_x_price"] += sh * px
+        if px and t.price_now:
+            sign = 1 if side == "BUY" else -1
+            r = sign * (t.price_now - px) / px
+            g["value_x_return"] += dv * r
+            g["value_with_return"] += dv
+        g["insiders"].add(t.insider.name.title())
+        if t.price_now and not g["price_now"]:
+            g["price_now"] = t.price_now
+            g["price_now_date"] = t.price_now_date
+        if SEVERITY_RANK.get(t.severity, 9) < SEVERITY_RANK.get(g["highest_severity"], 9):
+            g["highest_severity"] = t.severity
+
+    if not groups:
+        return ""
+
+    # Sort: severity → biggest $ first
+    sev_order = lambda g: (SEVERITY_RANK.get(g["highest_severity"], 9), -g["value_total"])
+    rows_html = []
+    for g in sorted(groups.values(), key=sev_order):
+        badge, color, _ = BADGE.get(g["highest_severity"], BADGE["none"])
+        side_color = "#16a34a" if g["side"] == "BUY" else "#dc2626"
+        wavg_px = g["shares_x_price"] / g["shares_total"] if g["shares_total"] else 0
+        wavg_ret = (g["value_x_return"] / g["value_with_return"]) if g["value_with_return"] else None
+        ret_html = _pct(wavg_ret * 100) if wavg_ret is not None else "—"
+        rows_html.append(f"""
+        <tr>
+          <td style="padding:6px 10px;vertical-align:top;color:{color};font-weight:600;white-space:nowrap">{badge}</td>
+          <td style="padding:6px 10px;vertical-align:top;font-family:monospace">{g["trade_date"]}</td>
+          <td style="padding:6px 10px;vertical-align:top;font-family:monospace;font-weight:600">{html.escape(g["ticker"])}<br><span style="color:#6b7280;font-size:11px;font-family:inherit">{html.escape(g["issuer"][:40])}</span></td>
+          <td style="padding:6px 10px;vertical-align:top;color:{side_color};font-weight:600">{g["side"]}</td>
+          <td style="padding:6px 10px;vertical-align:top;text-align:right">{len(g["insiders"])}</td>
+          <td style="padding:6px 10px;vertical-align:top;text-align:right">{int(g["shares_total"]):,}</td>
+          <td style="padding:6px 10px;vertical-align:top;text-align:right;font-weight:600">{_money(g["value_total"])}</td>
+          <td style="padding:6px 10px;vertical-align:top;text-align:right">${wavg_px:,.2f}</td>
+          <td style="padding:6px 10px;vertical-align:top;text-align:right">{_money(g["price_now"])}</td>
+          <td style="padding:6px 10px;vertical-align:top;text-align:right">{ret_html}</td>
+        </tr>
+        """)
+    return "".join(rows_html)
+
+
+def _render_recap_section(trades: List[Form4Trade]) -> str:
+    rows = _build_recap_rows(trades)
+    if not rows:
+        return ""
+    return f"""
+    <h3 style="margin-top:24px;margin-bottom:4px">📊 Daily recap (aggregated by trade date · ticker · direction)</h3>
+    <p style="color:#6b7280;font-size:12px;margin-top:0">
+      One row per unique (trade-date, ticker, BUY/SELL). Multiple lots and multiple insiders rolled up.
+      Weighted-avg price by shares; weighted-avg return by dollar value.
+    </p>
+    <table style="border-collapse:collapse;border:1px solid #ddd;font-size:13px;width:100%;margin-bottom:24px">
+      <thead style="background:#f5f5f5">
+        <tr>
+          <th style="padding:6px 10px;text-align:left">Flag</th>
+          <th style="padding:6px 10px;text-align:left">Trade date</th>
+          <th style="padding:6px 10px;text-align:left">Ticker</th>
+          <th style="padding:6px 10px;text-align:left">Dir</th>
+          <th style="padding:6px 10px;text-align:right"># insiders</th>
+          <th style="padding:6px 10px;text-align:right">Shares</th>
+          <th style="padding:6px 10px;text-align:right">Value</th>
+          <th style="padding:6px 10px;text-align:right">wAvg price</th>
+          <th style="padding:6px 10px;text-align:right">Price now</th>
+          <th style="padding:6px 10px;text-align:right">wAvg return</th>
+        </tr>
+      </thead>
+      <tbody>{rows}</tbody>
+    </table>
+    """
+
+
 def render_email_html(trades: List[Form4Trade]) -> str:
     sorted_t = sorted(trades, key=lambda t: (SEVERITY_RANK.get(t.severity, 9), -t.filing_date.toordinal()))
     rows = "".join(_row(t) for t in sorted_t)
+    recap_html = _render_recap_section(trades)
     by_sev = {k: 0 for k in BADGE}
     for t in trades:
         if t.severity in by_sev:
@@ -113,6 +216,7 @@ def render_email_html(trades: List[Form4Trade]) -> str:
         🟡 Smaller buys or C-suite sells. ⚪ Other open-market trades.
         Option exercises, tax-payment sales, gifts and awards are filtered out.
       </p>
+      {recap_html}
       <table style="border-collapse:collapse;border:1px solid #ddd;font-size:13px;width:100%">
         <thead style="background:#f5f5f5">
           <tr>
