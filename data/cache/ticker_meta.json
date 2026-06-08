@@ -174,6 +174,11 @@
     "market_cap": 52601667584,
     "sector": "Technology"
   },
+  "ALDX": {
+    "industry": "Biotechnology",
+    "market_cap": 98323344,
+    "sector": "Healthcare"
+  },
   "ALGM": {
     "industry": "Semiconductors",
     "market_cap": 8332530176,
@@ -193,6 +198,11 @@
     "industry": "Shell Companies",
     "market_cap": 100956376,
     "sector": "Financial Services"
+  },
+  "AMAT": {
+    "industry": "Semiconductor Equipment & Materials",
+    "market_cap": 359671562240,
+    "sector": "Technology"
   },
   "AMBA": {
     "industry": "Semiconductor Equipment & Materials",
@@ -514,6 +524,11 @@
     "market_cap": 1668101760,
     "sector": "Technology"
   },
+  "BBDC": {
+    "industry": "Asset Management",
+    "market_cap": 873255424,
+    "sector": "Financial Services"
+  },
   "BBSI": {
     "industry": "Staffing & Employment Services",
     "market_cap": 717387264,
@@ -678,6 +693,11 @@
     "industry": "Banks - Regional",
     "market_cap": 489946208,
     "sector": "Financial Services"
+  },
+  "BTSG": {
+    "industry": "Health Information Services",
+    "market_cap": 11324152832,
+    "sector": "Healthcare"
   },
   "BUSE": {
     "industry": "Banks - Regional",
@@ -884,6 +904,11 @@
     "market_cap": 25571264512,
     "sector": "Financial Services"
   },
+  "CLF": {
+    "industry": "Steel",
+    "market_cap": 7717710336,
+    "sector": "Basic Materials"
+  },
   "CLFD": {
     "industry": "Communication Equipment",
     "market_cap": 605682240,
@@ -1014,6 +1039,11 @@
     "market_cap": 9432931,
     "sector": "Technology"
   },
+  "CRDO": {
+    "industry": "Semiconductors",
+    "market_cap": 38160846848,
+    "sector": "Technology"
+  },
   "CRESY": {
     "industry": "Conglomerates",
     "market_cap": 777340224,
@@ -1068,6 +1098,11 @@
     "industry": "Aluminum",
     "market_cap": 4561039872,
     "sector": "Basic Materials"
+  },
+  "CSX": {
+    "industry": "Railroads",
+    "market_cap": 87313948672,
+    "sector": "Industrials"
   },
   "CTS": {
     "industry": "Electronic Components",
@@ -1194,6 +1229,11 @@
     "market_cap": 72202960896,
     "sector": "Technology"
   },
+  "DDS": {
+    "industry": "Department Stores",
+    "market_cap": 9468149760,
+    "sector": "Consumer Cyclical"
+  },
   "DGICA": {
     "industry": "Insurance - Property & Casualty",
     "market_cap": 636512192,
@@ -1313,6 +1353,11 @@
     "industry": "Oil & Gas E&P",
     "market_cap": 54467248128,
     "sector": "Energy"
+  },
+  "DXST": {
+    "industry": "Waste Management",
+    "market_cap": 7514530,
+    "sector": "Industrials"
   },
   "EA": {
     "industry": "Electronic Gaming & Multimedia",
@@ -1533,6 +1578,11 @@
     "industry": "Biotechnology",
     "market_cap": 320745856,
     "sector": "Healthcare"
+  },
+  "FF": {
+    "industry": "Specialty Chemicals",
+    "market_cap": 190806256,
+    "sector": "Basic Materials"
   },
   "FFIC": {
     "industry": "Banks - Regional",
@@ -1879,6 +1929,11 @@
     "market_cap": 43774356,
     "sector": "Financial Services"
   },
+  "HHS": {
+    "industry": "Conglomerates",
+    "market_cap": 18845454,
+    "sector": "Industrials"
+  },
   "HIG": {
     "industry": "Insurance - Diversified",
     "market_cap": 34850250752,
@@ -1933,6 +1988,11 @@
     "industry": "Biotechnology",
     "market_cap": 26368632,
     "sector": "Healthcare"
+  },
+  "HQI": {
+    "industry": "Staffing & Employment Services",
+    "market_cap": 182338928,
+    "sector": "Industrials"
   },
   "HROW": {
     "industry": "Drug Manufacturers - Specialty & Generic",
@@ -2074,6 +2134,11 @@
     "market_cap": 2943880448,
     "sector": "Technology"
   },
+  "INR": {
+    "industry": "Oil & Gas E&P",
+    "market_cap": 246771152,
+    "sector": "Energy"
+  },
   "INSM": {
     "industry": "Biotechnology",
     "market_cap": 25060919296,
@@ -2098,6 +2163,11 @@
     "industry": "Software - Application",
     "market_cap": 25158956,
     "sector": "Technology"
+  },
+  "IPVVU": {
+    "industry": "Shell Companies",
+    "market_cap": null,
+    "sector": "Financial Services"
   },
   "IRIX": {
     "industry": "Medical Devices",
@@ -2257,6 +2327,11 @@
   "KRMD": {
     "industry": "Medical Instruments & Supplies",
     "market_cap": 181894688,
+    "sector": "Healthcare"
+  },
+  "KRYS": {
+    "industry": "Biotechnology",
+    "market_cap": 8873406464,
     "sector": "Healthcare"
   },
   "KTOS": {
@@ -2714,6 +2789,11 @@
     "market_cap": 359851008,
     "sector": "Financial Services"
   },
+  "NAVI": {
+    "industry": "Credit Services",
+    "market_cap": 734057344,
+    "sector": "Financial Services"
+  },
   "NAVN": {
     "industry": "Software - Application",
     "market_cap": 5775877632,
@@ -2769,6 +2849,11 @@
     "market_cap": 399118848,
     "sector": "Financial Services"
   },
+  "NHI": {
+    "industry": "REIT - Healthcare Facilities",
+    "market_cap": 3413818112,
+    "sector": "Real Estate"
+  },
   "NIVF": {
     "industry": "Medical Care Facilities",
     "market_cap": 585598,
@@ -2804,6 +2889,11 @@
     "market_cap": 3218547456,
     "sector": "Technology"
   },
+  "NNE": {
+    "industry": "Specialty Industrial Machinery",
+    "market_cap": 1227991424,
+    "sector": "Industrials"
+  },
   "NOMD": {
     "industry": "Packaged Foods",
     "market_cap": 1368555520,
@@ -2828,6 +2918,11 @@
     "industry": "Banks - Regional",
     "market_cap": 590539264,
     "sector": "Financial Services"
+  },
+  "NPKI": {
+    "industry": "Building Products & Equipment",
+    "market_cap": 1205903744,
+    "sector": "Industrials"
   },
   "NPWR": {
     "industry": "Specialty Industrial Machinery",
@@ -2863,6 +2958,11 @@
     "industry": "Software - Infrastructure",
     "market_cap": 14337800192,
     "sector": "Technology"
+  },
+  "NTRA": {
+    "industry": "Diagnostics & Research",
+    "market_cap": 30835701760,
+    "sector": "Healthcare"
   },
   "NTWK": {
     "industry": "Software - Application",
@@ -3102,6 +3202,11 @@
   "PBI": {
     "industry": "Integrated Freight & Logistics",
     "market_cap": 2180606976,
+    "sector": "Industrials"
+  },
+  "PCAR": {
+    "industry": "Farm & Heavy Construction Machinery",
+    "market_cap": 61407080448,
     "sector": "Industrials"
   },
   "PCOR": {
@@ -3669,6 +3774,11 @@
     "market_cap": 351133344,
     "sector": "Financial Services"
   },
+  "SITM": {
+    "industry": "Semiconductors",
+    "market_cap": 16515966976,
+    "sector": "Technology"
+  },
   "SKWD": {
     "industry": "Insurance - Property & Casualty",
     "market_cap": 1835789952,
@@ -4009,6 +4119,11 @@
     "market_cap": 75930656,
     "sector": "Industrials"
   },
+  "TJX": {
+    "industry": "Apparel Retail",
+    "market_cap": 177537056768,
+    "sector": "Consumer Cyclical"
+  },
   "TKLF": {
     "industry": "Specialty Retail",
     "market_cap": 8253923,
@@ -4309,6 +4424,11 @@
     "market_cap": 392920352,
     "sector": "Consumer Defensive"
   },
+  "VMAR": {
+    "industry": "Recreational Vehicles",
+    "market_cap": 604921,
+    "sector": "Consumer Cyclical"
+  },
   "VRDN": {
     "industry": "Biotechnology",
     "market_cap": 1796592640,
@@ -4413,6 +4533,11 @@
     "industry": "Medical Instruments & Supplies",
     "market_cap": 3078925312,
     "sector": "Healthcare"
+  },
+  "WRLD": {
+    "industry": "Credit Services",
+    "market_cap": 776326080,
+    "sector": "Financial Services"
   },
   "WSBK": {
     "industry": "Banks - Regional",
