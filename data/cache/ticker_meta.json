@@ -624,6 +624,11 @@
     "market_cap": 73676652544,
     "sector": "Industrials"
   },
+  "BEKE": {
+    "industry": "Real Estate Services",
+    "market_cap": 17806510080,
+    "sector": "Real Estate"
+  },
   "BETR": {
     "industry": "Mortgage Finance",
     "market_cap": 549082176,
@@ -1189,6 +1194,11 @@
     "market_cap": 87313948672,
     "sector": "Industrials"
   },
+  "CTEV": {
+    "industry": "Health Information Services",
+    "market_cap": 507001216,
+    "sector": "Healthcare"
+  },
   "CTS": {
     "industry": "Electronic Components",
     "market_cap": 1895138048,
@@ -1239,6 +1249,16 @@
     "market_cap": 4305247744,
     "sector": "Consumer Defensive"
   },
+  "CVU": {
+    "industry": "Aerospace & Defense",
+    "market_cap": 62217540,
+    "sector": "Industrials"
+  },
+  "CW": {
+    "industry": "Aerospace & Defense",
+    "market_cap": 26561435648,
+    "sector": "Industrials"
+  },
   "CWBC": {
     "industry": "Banks - Regional",
     "market_cap": 655291072,
@@ -1288,6 +1308,11 @@
     "industry": "Banks - Regional",
     "market_cap": 371948320,
     "sector": "Financial Services"
+  },
+  "CZR": {
+    "industry": "Resorts & Casinos",
+    "market_cap": 6002849280,
+    "sector": "Consumer Cyclical"
   },
   "DASH": {
     "industry": "Internet Retail",
@@ -1489,6 +1514,11 @@
     "market_cap": 3375928,
     "sector": "Healthcare"
   },
+  "ECL": {
+    "industry": "Specialty Chemicals",
+    "market_cap": 72326619136,
+    "sector": "Basic Materials"
+  },
   "EDAP": {
     "industry": "Medical Distribution",
     "market_cap": 154800592,
@@ -1603,6 +1633,11 @@
     "industry": "Insurance Brokers",
     "market_cap": 11153951744,
     "sector": "Financial Services"
+  },
+  "ESTC": {
+    "industry": "Software - Application",
+    "market_cap": 6318179840,
+    "sector": "Technology"
   },
   "ETN": {
     "industry": "Specialty Industrial Machinery",
@@ -1749,6 +1784,11 @@
     "market_cap": 67383512,
     "sector": "Communication Services"
   },
+  "FLO": {
+    "industry": "Packaged Foods",
+    "market_cap": 1647187456,
+    "sector": "Consumer Defensive"
+  },
   "FLUT": {
     "industry": "Gambling",
     "market_cap": 16267902976,
@@ -1813,6 +1853,11 @@
     "industry": "Software - Infrastructure",
     "market_cap": 89280536576,
     "sector": "Technology"
+  },
+  "GBTG": {
+    "industry": "Travel Services",
+    "market_cap": 4870398464,
+    "sector": "Consumer Cyclical"
   },
   "GD": {
     "industry": "Aerospace & Defense",
@@ -2149,6 +2194,11 @@
     "market_cap": 1148073344,
     "sector": "Healthcare"
   },
+  "HRZN": {
+    "industry": "Asset Management",
+    "market_cap": 303079328,
+    "sector": "Financial Services"
+  },
   "HSHP": {
     "industry": "Marine Shipping",
     "market_cap": 695156032,
@@ -2263,6 +2313,11 @@
     "industry": "Semiconductors",
     "market_cap": 912766784,
     "sector": "Technology"
+  },
+  "INDV": {
+    "industry": "Drug Manufacturers - Specialty & Generic",
+    "market_cap": 4502412800,
+    "sector": "Healthcare"
   },
   "INFQ": {
     "industry": "Software - Infrastructure",
@@ -2692,6 +2747,11 @@
   "MBC": {
     "industry": "Furnishings, Fixtures & Appliances",
     "market_cap": 1087869056,
+    "sector": "Consumer Cyclical"
+  },
+  "MCD": {
+    "industry": "Restaurants",
+    "market_cap": 200732098560,
     "sector": "Consumer Cyclical"
   },
   "MCK": {
@@ -3164,6 +3224,11 @@
     "market_cap": 888449664,
     "sector": "Healthcare"
   },
+  "NUVL": {
+    "industry": "Biotechnology",
+    "market_cap": 9760467968,
+    "sector": "Healthcare"
+  },
   "NVRI": {
     "industry": "Waste Management",
     "market_cap": 1587947520,
@@ -3234,6 +3299,11 @@
     "market_cap": 11345952768,
     "sector": "Utilities"
   },
+  "OKTA": {
+    "industry": "Software - Infrastructure",
+    "market_cap": 19973941248,
+    "sector": "Technology"
+  },
   "OLED": {
     "industry": "Electronic Components",
     "market_cap": 4323990016,
@@ -3243,6 +3313,11 @@
     "industry": "REIT - Diversified",
     "market_cap": 499447136,
     "sector": "Real Estate"
+  },
+  "ONC": {
+    "industry": "Biotechnology",
+    "market_cap": 27349856256,
+    "sector": "Healthcare"
   },
   "ONDS": {
     "industry": "Communication Equipment",
@@ -3373,6 +3448,11 @@
     "industry": "Software - Application",
     "market_cap": 606731584,
     "sector": "Technology"
+  },
+  "PAYIX": {
+    "industry": "",
+    "market_cap": null,
+    "sector": ""
   },
   "PBH": {
     "industry": "Drug Manufacturers - Specialty & Generic",
