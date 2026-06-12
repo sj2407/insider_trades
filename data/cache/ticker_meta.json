@@ -159,6 +159,11 @@
     "market_cap": 11820620,
     "sector": "Basic Materials"
   },
+  "AII": {
+    "industry": "Insurance - Property & Casualty",
+    "market_cap": 330301184,
+    "sector": "Financial Services"
+  },
   "AIJTY": {
     "industry": "Credit Services",
     "market_cap": 17823300,
@@ -734,6 +739,11 @@
     "market_cap": 1544016896,
     "sector": "Consumer Cyclical"
   },
+  "BRC": {
+    "industry": "Security & Protection Services",
+    "market_cap": 3817083392,
+    "sector": "Industrials"
+  },
   "BRCB": {
     "industry": "Restaurants",
     "market_cap": 146911392,
@@ -753,6 +763,11 @@
     "industry": "Packaged Foods",
     "market_cap": 31765696,
     "sector": "Consumer Defensive"
+  },
+  "BROS": {
+    "industry": "Restaurants",
+    "market_cap": 11302890496,
+    "sector": "Consumer Cyclical"
   },
   "BSBR": {
     "industry": "Banks - Regional",
@@ -1654,6 +1669,11 @@
     "market_cap": 3116666368,
     "sector": "Financial Services"
   },
+  "EU": {
+    "industry": "Uranium",
+    "market_cap": 280666720,
+    "sector": "Energy"
+  },
   "EVCM": {
     "industry": "Software - Application",
     "market_cap": 1686340224,
@@ -1668,6 +1688,11 @@
     "industry": "Medical Devices",
     "market_cap": 46835568640,
     "sector": "Healthcare"
+  },
+  "EWBC": {
+    "industry": "Banks - Regional",
+    "market_cap": 17980071936,
+    "sector": "Financial Services"
   },
   "EWCZ": {
     "industry": "Household & Personal Products",
@@ -2744,6 +2769,11 @@
     "market_cap": 5575101440,
     "sector": "Industrials"
   },
+  "MBBC": {
+    "industry": "Banks - Regional",
+    "market_cap": 41797316,
+    "sector": "Financial Services"
+  },
   "MBC": {
     "industry": "Furnishings, Fixtures & Appliances",
     "market_cap": 1087869056,
@@ -2808,6 +2838,11 @@
     "industry": "Biotechnology",
     "market_cap": 5600210944,
     "sector": "Healthcare"
+  },
+  "MKC": {
+    "industry": "Packaged Foods",
+    "market_cap": 13100460032,
+    "sector": "Consumer Defensive"
   },
   "MKSI": {
     "industry": "Scientific & Technical Instruments",
@@ -2953,6 +2988,11 @@
     "industry": "Software - Infrastructure",
     "market_cap": 3174467371008,
     "sector": "Technology"
+  },
+  "MSIF": {
+    "industry": "Asset Management",
+    "market_cap": 532126240,
+    "sector": "Financial Services"
   },
   "MSTR": {
     "industry": "Software - Application",
@@ -3168,6 +3208,11 @@
     "industry": "Specialty Industrial Machinery",
     "market_cap": 196212032,
     "sector": "Industrials"
+  },
+  "NRDY": {
+    "industry": "Software - Application",
+    "market_cap": 186615776,
+    "sector": "Technology"
   },
   "NRP": {
     "industry": "Thermal Coal",
@@ -3844,6 +3889,11 @@
     "market_cap": 27272755200,
     "sector": "Communication Services"
   },
+  "RDGT": {
+    "industry": "Pharmaceutical Retailers",
+    "market_cap": 1331910,
+    "sector": "Healthcare"
+  },
   "RDN": {
     "industry": "Insurance - Specialty",
     "market_cap": 4905455104,
@@ -4054,10 +4104,20 @@
     "market_cap": 3478379008,
     "sector": "Financial Services"
   },
+  "SFD": {
+    "industry": "Packaged Foods",
+    "market_cap": 10517646336,
+    "sector": "Consumer Defensive"
+  },
   "SGHC": {
     "industry": "Gambling",
     "market_cap": 6544029184,
     "sector": "Consumer Cyclical"
+  },
+  "SGHT": {
+    "industry": "Medical Devices",
+    "market_cap": 271777664,
+    "sector": "Healthcare"
   },
   "SHAK": {
     "industry": "Restaurants",
@@ -4283,6 +4343,11 @@
     "industry": "Advertising Agencies",
     "market_cap": 1516866432,
     "sector": "Communication Services"
+  },
+  "STI": {
+    "industry": "Electrical Equipment & Parts",
+    "market_cap": 216597440,
+    "sector": "Industrials"
   },
   "STIM": {
     "industry": "Medical Devices",
@@ -4783,6 +4848,11 @@
     "industry": "Asset Management",
     "market_cap": 685296512,
     "sector": "Financial Services"
+  },
+  "VIRC": {
+    "industry": "Furnishings, Fixtures & Appliances",
+    "market_cap": 96736688,
+    "sector": "Consumer Cyclical"
   },
   "VITL": {
     "industry": "Farm Products",
