@@ -624,9 +624,19 @@
     "market_cap": 6934202880,
     "sector": "Technology"
   },
+  "AZTR": {
+    "industry": "Biotechnology",
+    "market_cap": 2780241,
+    "sector": "Healthcare"
+  },
   "BAC": {
     "industry": "Banks - Diversified",
     "market_cap": 401170268160,
+    "sector": "Financial Services"
+  },
+  "BACC": {
+    "industry": "Shell Companies",
+    "market_cap": 291645376,
     "sector": "Financial Services"
   },
   "BAND": {
@@ -978,6 +988,11 @@
     "industry": "Credit Services",
     "market_cap": 5664965632,
     "sector": "Financial Services"
+  },
+  "CAES": {
+    "industry": "",
+    "market_cap": null,
+    "sector": ""
   },
   "CAI": {
     "industry": "Biotechnology",
@@ -1613,6 +1628,11 @@
     "industry": "Oil & Gas E&P",
     "market_cap": 1313995776,
     "sector": "Energy"
+  },
+  "DMRC": {
+    "industry": "Software - Application",
+    "market_cap": 213895632,
+    "sector": "Technology"
   },
   "DOC": {
     "industry": "REIT - Healthcare Facilities",
@@ -2433,6 +2453,11 @@
     "industry": "Asset Management",
     "market_cap": 4838661120,
     "sector": "Financial Services"
+  },
+  "HMMR": {
+    "industry": "Telecom Services",
+    "market_cap": 7596286,
+    "sector": "Communication Services"
   },
   "HNGE": {
     "industry": "Health Information Services",
@@ -3919,6 +3944,11 @@
     "market_cap": 2240899584,
     "sector": "Industrials"
   },
+  "PCVX": {
+    "industry": "Biotechnology",
+    "market_cap": 7427816448,
+    "sector": "Healthcare"
+  },
   "PEB": {
     "industry": "REIT - Hotel & Motel",
     "market_cap": 1937480192,
@@ -4489,6 +4519,11 @@
     "market_cap": 5152339456,
     "sector": "Technology"
   },
+  "SAGT": {
+    "industry": "Software - Application",
+    "market_cap": 18859500,
+    "sector": "Technology"
+  },
   "SAH": {
     "industry": "Auto & Truck Dealerships",
     "market_cap": 2613343488,
@@ -4593,6 +4628,11 @@
     "industry": "Semiconductors",
     "market_cap": 16515966976,
     "sector": "Technology"
+  },
+  "SJM": {
+    "industry": "Packaged Foods",
+    "market_cap": 11823032320,
+    "sector": "Consumer Defensive"
   },
   "SKWD": {
     "industry": "Insurance - Property & Casualty",
@@ -4728,6 +4768,11 @@
     "industry": "Credit Services",
     "market_cap": 22717345792,
     "sector": "Financial Services"
+  },
+  "SONY": {
+    "industry": "Consumer Electronics",
+    "market_cap": 119740989440,
+    "sector": "Technology"
   },
   "SOPH": {
     "industry": "Health Information Services",
