@@ -1044,6 +1044,11 @@
     "market_cap": 418938464,
     "sector": "Financial Services"
   },
+  "CCK": {
+    "industry": "",
+    "market_cap": null,
+    "sector": ""
+  },
   "CCL": {
     "industry": "Travel Services",
     "market_cap": 34905518080,
@@ -1212,6 +1217,11 @@
   "CNTM": {
     "industry": "",
     "market_cap": 45254016,
+    "sector": ""
+  },
+  "CNXU": {
+    "industry": "",
+    "market_cap": null,
     "sector": ""
   },
   "COAG": {
@@ -2264,6 +2274,11 @@
     "market_cap": 16373735424,
     "sector": "Industrials"
   },
+  "GOF": {
+    "industry": "",
+    "market_cap": null,
+    "sector": ""
+  },
   "GOLD": {
     "industry": "Capital Markets",
     "market_cap": 1176417408,
@@ -2748,6 +2763,11 @@
     "industry": "Medical Devices",
     "market_cap": 1110717952,
     "sector": "Healthcare"
+  },
+  "IRON": {
+    "industry": "",
+    "market_cap": null,
+    "sector": ""
   },
   "IRTC": {
     "industry": "Medical Devices",
@@ -4289,6 +4309,11 @@
     "market_cap": 1776049152,
     "sector": "Financial Services"
   },
+  "PWRL": {
+    "industry": "",
+    "market_cap": null,
+    "sector": ""
+  },
   "PYPL": {
     "industry": "Credit Services",
     "market_cap": 38503903232,
@@ -5208,6 +5233,11 @@
     "industry": "Luxury Goods",
     "market_cap": 26526449664,
     "sector": "Consumer Cyclical"
+  },
+  "TPST": {
+    "industry": "",
+    "market_cap": null,
+    "sector": ""
   },
   "TRGP": {
     "industry": "Oil & Gas Midstream",
