@@ -159,6 +159,11 @@
     "market_cap": 1586401792,
     "sector": "Technology"
   },
+  "AFG": {
+    "industry": "Insurance - Property & Casualty",
+    "market_cap": 11484988416,
+    "sector": "Financial Services"
+  },
   "AFL": {
     "industry": "Insurance - Life",
     "market_cap": 59240751104,
@@ -308,6 +313,11 @@
     "industry": "Building Materials",
     "market_cap": 26730285056,
     "sector": "Basic Materials"
+  },
+  "AMS": {
+    "industry": "Medical Care Facilities",
+    "market_cap": 9341250,
+    "sector": "Healthcare"
   },
   "AMSC": {
     "industry": "Specialty Industrial Machinery",
@@ -468,6 +478,11 @@
     "industry": "Electronics & Computer Distribution",
     "market_cap": 11112940544,
     "sector": "Technology"
+  },
+  "ARX": {
+    "industry": "Insurance Brokers",
+    "market_cap": 2914078976,
+    "sector": "Financial Services"
   },
   "AS": {
     "industry": "Leisure",
@@ -687,6 +702,11 @@
   "BCG": {
     "industry": "Asset Management",
     "market_cap": 28409124,
+    "sector": "Financial Services"
+  },
+  "BCIC": {
+    "industry": "Asset Management",
+    "market_cap": 88003888,
     "sector": "Financial Services"
   },
   "BDCO": {
@@ -1044,6 +1064,11 @@
     "market_cap": 418938464,
     "sector": "Financial Services"
   },
+  "CCIF": {
+    "industry": "Asset Management",
+    "market_cap": 58084224,
+    "sector": "Financial Services"
+  },
   "CCK": {
     "industry": "",
     "market_cap": null,
@@ -1159,6 +1184,11 @@
     "market_cap": 6003981,
     "sector": "Consumer Cyclical"
   },
+  "CLNE": {
+    "industry": "Oil & Gas Refining & Marketing",
+    "market_cap": 376584128,
+    "sector": "Energy"
+  },
   "CLNN": {
     "industry": "Packaged Foods",
     "market_cap": 83037064,
@@ -1213,6 +1243,11 @@
     "industry": "Entertainment",
     "market_cap": 3078525440,
     "sector": "Communication Services"
+  },
+  "CNTA": {
+    "industry": "Biotechnology",
+    "market_cap": 6266618368,
+    "sector": "Healthcare"
   },
   "CNTM": {
     "industry": "",
@@ -2494,6 +2529,11 @@
     "market_cap": 2540715,
     "sector": "Technology"
   },
+  "HL": {
+    "industry": "Other Precious Metals & Mining",
+    "market_cap": 10017089536,
+    "sector": "Basic Materials"
+  },
   "HLF": {
     "industry": "Packaged Foods",
     "market_cap": 1350812416,
@@ -2522,6 +2562,11 @@
   "HOG": {
     "industry": "Recreational Vehicles",
     "market_cap": 2700131840,
+    "sector": "Consumer Cyclical"
+  },
+  "HOV": {
+    "industry": "Residential Construction",
+    "market_cap": 831535424,
     "sector": "Consumer Cyclical"
   },
   "HOWL": {
@@ -2919,6 +2964,11 @@
     "market_cap": 117058008,
     "sector": "Healthcare"
   },
+  "KMX": {
+    "industry": "Auto & Truck Dealerships",
+    "market_cap": 7207563776,
+    "sector": "Consumer Cyclical"
+  },
   "KNSA": {
     "industry": "Drug Manufacturers - Specialty & Generic",
     "market_cap": 3681484032,
@@ -3018,6 +3068,11 @@
     "industry": "Banks - Regional",
     "market_cap": 230500400,
     "sector": "Financial Services"
+  },
+  "LCTC": {
+    "industry": "Scientific & Technical Instruments",
+    "market_cap": 6386069,
+    "sector": "Technology"
   },
   "LEE": {
     "industry": "Publishing",
@@ -3138,6 +3193,11 @@
     "industry": "Electronic Components",
     "market_cap": 884401792,
     "sector": "Technology"
+  },
+  "LZB": {
+    "industry": "Furnishings, Fixtures & Appliances",
+    "market_cap": 1665715456,
+    "sector": "Consumer Cyclical"
   },
   "MAIA": {
     "industry": "Biotechnology",
@@ -3959,6 +4019,11 @@
     "market_cap": 119714672,
     "sector": "Financial Services"
   },
+  "OXY": {
+    "industry": "Oil & Gas E&P",
+    "market_cap": 50408087552,
+    "sector": "Energy"
+  },
   "P": {
     "industry": "Computer Hardware",
     "market_cap": 27834390528,
@@ -3988,6 +4053,11 @@
     "industry": "Software - Application",
     "market_cap": 606731584,
     "sector": "Technology"
+  },
+  "PATK": {
+    "industry": "Recreational Vehicles",
+    "market_cap": 2987198208,
+    "sector": "Consumer Cyclical"
   },
   "PAYIX": {
     "industry": "",
@@ -4509,6 +4579,11 @@
     "market_cap": 21657997312,
     "sector": "Consumer Cyclical"
   },
+  "RLAY": {
+    "industry": "Biotechnology",
+    "market_cap": 3981769984,
+    "sector": "Healthcare"
+  },
   "RLI": {
     "industry": "Insurance - Property & Casualty",
     "market_cap": 4785390080,
@@ -4714,6 +4789,11 @@
     "market_cap": 399403968,
     "sector": "Industrials"
   },
+  "SHO": {
+    "industry": "REIT - Hotel & Motel",
+    "market_cap": 2191716864,
+    "sector": "Real Estate"
+  },
   "SIMA": {
     "industry": "Shell Companies",
     "market_cap": 351133344,
@@ -4843,6 +4923,11 @@
     "industry": "Capital Markets",
     "market_cap": 9144037376,
     "sector": "Financial Services"
+  },
+  "SNOW": {
+    "industry": "Software - Application",
+    "market_cap": 77229416448,
+    "sector": "Technology"
   },
   "SNPS": {
     "industry": "Software - Infrastructure",
