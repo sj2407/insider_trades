@@ -669,6 +669,11 @@
     "market_cap": 556847296,
     "sector": "Industrials"
   },
+  "BBD": {
+    "industry": "Banks - Regional",
+    "market_cap": 35411886080,
+    "sector": "Financial Services"
+  },
   "BBDC": {
     "industry": "Asset Management",
     "market_cap": 873255424,
@@ -1519,6 +1524,11 @@
     "market_cap": 26561435648,
     "sector": "Industrials"
   },
+  "CWAN": {
+    "industry": "Software - Application",
+    "market_cap": 7330872320,
+    "sector": "Technology"
+  },
   "CWBC": {
     "industry": "Banks - Regional",
     "market_cap": 655291072,
@@ -1893,6 +1903,11 @@
     "industry": "Semiconductor Equipment & Materials",
     "market_cap": 21137715200,
     "sector": "Technology"
+  },
+  "EPSN": {
+    "industry": "Oil & Gas E&P",
+    "market_cap": 158200256,
+    "sector": "Energy"
   },
   "EQH": {
     "industry": "Asset Management",
@@ -3074,6 +3089,11 @@
     "market_cap": 6386069,
     "sector": "Technology"
   },
+  "LEA": {
+    "industry": "Auto Parts",
+    "market_cap": 6924144640,
+    "sector": "Consumer Cyclical"
+  },
   "LEE": {
     "industry": "Publishing",
     "market_cap": 195178832,
@@ -3138,6 +3158,11 @@
     "industry": "",
     "market_cap": null,
     "sector": ""
+  },
+  "LNKS": {
+    "industry": "Electrical Equipment & Parts",
+    "market_cap": 3277490,
+    "sector": "Industrials"
   },
   "LODE": {
     "industry": "Other Precious Metals & Mining",
@@ -3238,6 +3263,11 @@
     "industry": "Furnishings, Fixtures & Appliances",
     "market_cap": 1087869056,
     "sector": "Consumer Cyclical"
+  },
+  "MCAH": {
+    "industry": "Shell Companies",
+    "market_cap": null,
+    "sector": "Financial Services"
   },
   "MCD": {
     "industry": "Restaurants",
@@ -3873,6 +3903,11 @@
     "industry": "Biotechnology",
     "market_cap": 817056384,
     "sector": "Healthcare"
+  },
+  "OESX": {
+    "industry": "Electrical Equipment & Parts",
+    "market_cap": 39673232,
+    "sector": "Industrials"
   },
   "OI": {
     "industry": "Packaging & Containers",
@@ -5519,6 +5554,11 @@
     "market_cap": 1272382848,
     "sector": "Real Estate"
   },
+  "UONEK": {
+    "industry": "Broadcasting",
+    "market_cap": 20283328,
+    "sector": "Communication Services"
+  },
   "UP": {
     "industry": "Airports & Air Services",
     "market_cap": 203003632,
@@ -5703,6 +5743,11 @@
     "industry": "Communication Equipment",
     "market_cap": 154030832,
     "sector": "Technology"
+  },
+  "WB": {
+    "industry": "Internet Content & Information",
+    "market_cap": 1771299328,
+    "sector": "Communication Services"
   },
   "WCN": {
     "industry": "Waste Management",
