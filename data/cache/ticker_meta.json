@@ -14,6 +14,11 @@
     "market_cap": null,
     "sector": "Industrials"
   },
+  "AAL": {
+    "industry": "Airlines",
+    "market_cap": 11818953728,
+    "sector": "Industrials"
+  },
   "AAOI": {
     "industry": "Communication Equipment",
     "market_cap": 16335021056,
@@ -533,6 +538,11 @@
     "industry": "Metal Fabrication",
     "market_cap": 22185998336,
     "sector": "Industrials"
+  },
+  "ATLC": {
+    "industry": "Credit Services",
+    "market_cap": 1669178112,
+    "sector": "Financial Services"
   },
   "ATLO": {
     "industry": "Banks - Regional",
@@ -1109,6 +1119,11 @@
     "market_cap": 6286953472,
     "sector": "Basic Materials"
   },
+  "CECO": {
+    "industry": "Pollution & Treatment Controls",
+    "market_cap": 5365486592,
+    "sector": "Industrials"
+  },
   "CELH": {
     "industry": "Beverages - Non-Alcoholic",
     "market_cap": 8091017216,
@@ -1449,6 +1464,11 @@
     "market_cap": 507001216,
     "sector": "Healthcare"
   },
+  "CTGO": {
+    "industry": "Gold",
+    "market_cap": 484338880,
+    "sector": "Basic Materials"
+  },
   "CTNT": {
     "industry": "Integrated Freight & Logistics",
     "market_cap": 4690635,
@@ -1634,6 +1654,11 @@
     "market_cap": 9468149760,
     "sector": "Consumer Cyclical"
   },
+  "DFTX": {
+    "industry": "Biotechnology",
+    "market_cap": 5966809600,
+    "sector": "Healthcare"
+  },
   "DGAC": {
     "industry": "",
     "market_cap": null,
@@ -1723,6 +1748,11 @@
     "industry": "Health Information Services",
     "market_cap": 3390765568,
     "sector": "Healthcare"
+  },
+  "DPC": {
+    "industry": "Aerospace & Defense",
+    "market_cap": 6646746112,
+    "sector": "Industrials"
   },
   "DRH": {
     "industry": "REIT - Hotel & Motel",
@@ -2153,6 +2183,11 @@
     "industry": "Leisure",
     "market_cap": 285340288,
     "sector": "Consumer Cyclical"
+  },
+  "FOA": {
+    "industry": "Credit Services",
+    "market_cap": 215269888,
+    "sector": "Financial Services"
   },
   "FONR": {
     "industry": "Diagnostics & Research",
@@ -2734,6 +2769,11 @@
     "market_cap": 265259328,
     "sector": "Healthcare"
   },
+  "IMVT": {
+    "industry": "Biotechnology",
+    "market_cap": 7976250880,
+    "sector": "Healthcare"
+  },
   "INDI": {
     "industry": "Semiconductors",
     "market_cap": 912766784,
@@ -3193,6 +3233,11 @@
     "industry": "Semiconductor Equipment & Materials",
     "market_cap": 429833748480,
     "sector": "Technology"
+  },
+  "LTH": {
+    "industry": "Leisure",
+    "market_cap": 9128937472,
+    "sector": "Consumer Cyclical"
   },
   "LUCK": {
     "industry": "Leisure",
@@ -4319,6 +4364,11 @@
     "market_cap": 17609799680,
     "sector": "Energy"
   },
+  "PRA": {
+    "industry": "Insurance - Property & Casualty",
+    "market_cap": 1290193152,
+    "sector": "Financial Services"
+  },
   "PRCH": {
     "industry": "Insurance - Property & Casualty",
     "market_cap": 1141076224,
@@ -4368,6 +4418,11 @@
     "industry": "Information Technology Services",
     "market_cap": 5471951360,
     "sector": "Technology"
+  },
+  "PSNL": {
+    "industry": "Diagnostics & Research",
+    "market_cap": 1363468672,
+    "sector": "Healthcare"
   },
   "PSX": {
     "industry": "Oil & Gas Refining & Marketing",
@@ -4747,6 +4802,11 @@
   "SATS": {
     "industry": "Telecom Services",
     "market_cap": 33798051840,
+    "sector": "Communication Services"
+  },
+  "SBGI": {
+    "industry": "Broadcasting",
+    "market_cap": 995885056,
     "sector": "Communication Services"
   },
   "SBMT": {
